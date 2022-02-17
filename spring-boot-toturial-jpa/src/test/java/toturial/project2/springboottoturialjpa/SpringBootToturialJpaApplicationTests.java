@@ -1,10 +1,10 @@
-package io.toturial.project2.springbootinitializer;
+package toturial.project2.springboottoturialjpa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringBootInitializerApplicationTests {
+class SpringBootToturialJpaApplicationTests {
 
 	@Test
 	void contextLoads() {
