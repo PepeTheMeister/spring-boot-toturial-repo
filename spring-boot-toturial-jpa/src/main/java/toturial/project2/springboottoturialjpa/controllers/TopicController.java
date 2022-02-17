@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import toturial.project2.springboottoturialjpa.dto.TopicDTO;
+import toturial.project2.springboottoturialjpa.entities.Topic;
 import toturial.project2.springboottoturialjpa.services.TopicService;
 
 @RestController
@@ -19,27 +19,27 @@ public class TopicController {
 	private TopicService topicService;
 
 	@RequestMapping("/topics")
-	public List<TopicDTO> getAllTopics() {
+	public List<Topic> getAllTopics() {
 		return topicService.getAlltopics();
 	}
 	
 	@RequestMapping("/topics/{id}")
-	public TopicDTO getTopic(@PathVariable String id) {
+	public Topic getTopic(@PathVariable int id) {
 		return topicService.getTopic(id);
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/topics")
-	public void addTopic(@RequestBody TopicDTO topic) {
+	public void addTopic(@RequestBody Topic topic) {
 		topicService.addTopic(topic);
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/topics/{id}")
-	public void updateTopic(@RequestBody TopicDTO topic, @PathVariable String id) {
+	public void updateTopic(@RequestBody Topic topic, @PathVariable int id) {
 		topicService.updateTopic(topic, id);
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/topics/{id}")
-	public void deleteTopic(@PathVariable String id) {
+	public void deleteTopic(@PathVariable int id) {
 		topicService.deleteTopic(id);
 	}
 	
